@@ -9,16 +9,8 @@
  * Tested up to: 4.7.3
  */
 
+use Dinamiko\Nonces\Nonce;
+
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 require 'vendor/autoload.php';
-
-/*
-use Dinamiko\Nonces\Create;
-$nonce = new Create();
-echo $nonce->create_nonce();
-
-use Dinamiko\Nonces\Verify;
-$nonce = new Verify();
-echo $nonce->verify_nonce();
-*/
