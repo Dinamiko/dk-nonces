@@ -10,7 +10,7 @@ Plugin for testing dinamiko/nonces package.
 
 ## Installation
 
-Clone Repo:
+Clone this repo to your /wp-content/plugins/ directory:
 
 ```sh
 $ git clone https://github.com/Dinamiko/dk-nonces.git
