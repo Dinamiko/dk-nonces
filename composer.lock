@@ -1,0 +1,42 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "a838e2d028dad45f6cb06568f641beca",
+    "packages": [
+        {
+            "name": "dinamiko/nonces",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "dinamiko/nonces",
+                "reference": "f3048f0920f81c82d9c8291fd1b354b63c5017e8",
+                "shasum": null
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dinamiko\\Nonces\\": "src"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Emili Castells",
+                    "email": "emili.castells@dinamiko.com"
+                }
+            ]
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "dinamiko/nonces": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
