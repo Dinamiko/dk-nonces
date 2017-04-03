@@ -29,11 +29,10 @@ class NonceTest extends \PHPUnit\Framework\TestCase {
     $this->assertEquals( 'http://my-site.com?nonce-name=62a9e9c072', $nonce->create_url( 'http://my-site.com', 'nonce-name' ) );
   }
 
-
   public function test_create_field() {
     Functions::when('wp_nonce_field')->justReturn( '<input type="hidden" id="_wpnonce" name="_wpnonce" value="62a9e9c072">
     <input type="hidden" name="_wp_http_referer" value="/">' );
-    
+
     $expected = '<input type="hidden" id="_wpnonce" name="_wpnonce" value="62a9e9c072">
     <input type="hidden" name="_wp_http_referer" value="/">';
 
