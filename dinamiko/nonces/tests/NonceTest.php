@@ -16,10 +16,22 @@ class NonceTest extends \PHPUnit\Framework\TestCase {
   }
 
   public function test_to_string() {
-    Functions::when('wp_create_nonce')->justReturn('62a9e9c072');
+    Functions::when( 'wp_create_nonce' )->justReturn( '62a9e9c072' );
 
     $nonce = new Nonce( 'my-action' );
-    $this->assertEquals( '62a9e9c072', (string)$nonce );
+    $this->assertEquals( '62a9e9c072', (string) $nonce );
   }
+
+  public function test_is_valid() {
+    Functions::expect( 'wp_verify_nonce' )->with( 'bar', 'my-action' )->andReturn(true);
+
+    $nonce = new Nonce( 'my-action' );
+
+    $_POST['foo'] = 'bar';
+    $_SERVER['REQUEST_METHOD'] = 'POST';
+
+    self::assertTrue( $nonce->is_valid( $_POST['foo'] ) );
+  }
+
 
 }
