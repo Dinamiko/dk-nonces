@@ -8,7 +8,6 @@ Plugin for testing dinamiko/nonces package.
 
 * [Installation](#installation)
 * [Usage](#usage)
-* [Utils](#utils)
 
 ## Installation
 
