@@ -5,10 +5,7 @@ final class Nonce implements NonceInterface {
 
   private $action;
 
-  private $whitelist_request_methods = [
-		'POST' => INPUT_POST,
-		'GET'  => INPUT_GET,
-	];
+  private $allowed_request_methods = [ 'POST', 'GET' ];
 
   public function __construct( string $action ) {
     $this->action = $action;
@@ -22,15 +19,17 @@ final class Nonce implements NonceInterface {
 		return (string) wp_create_nonce( $this->action );
 	}
 
-  public function is_valid( $context ): bool {
+  public function is_valid( $request_value ): bool {
 
     $http_method = isset( $_SERVER['REQUEST_METHOD'] ) ? $_SERVER['REQUEST_METHOD'] : null;
 
-    if( $http_method == null ) {
+    if( $http_method == null || ! in_array( $http_method, $this->$allowed_request_methods ) ) {
       return false;
     }
 
-    return (bool) wp_verify_nonce( $context, $this->action );
+    $nonce = filter_var( $request_value );
+
+    return (bool) wp_verify_nonce( $nonce, $this->action );
 
   }
 

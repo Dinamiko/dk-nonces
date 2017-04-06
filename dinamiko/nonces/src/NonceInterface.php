@@ -7,6 +7,6 @@ interface NonceInterface {
 
   public function __toString(): string;
 
-  public function is_valid( $context ): bool;
+  public function is_valid( $request_value ): bool;
 
 }
