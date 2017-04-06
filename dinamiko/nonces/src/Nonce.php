@@ -23,7 +23,7 @@ final class Nonce implements NonceInterface {
 
     $http_method = isset( $_SERVER['REQUEST_METHOD'] ) ? $_SERVER['REQUEST_METHOD'] : null;
 
-    if( $http_method == null || ! in_array( $http_method, $this->$allowed_request_methods ) ) {
+    if( $http_method == null || ! in_array( $http_method, $this->allowed_request_methods ) ) {
       return false;
     }
 
