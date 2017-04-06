@@ -51,4 +51,4 @@ Verify a nonce:
 ```php
 $nonce = new Nonce( 'my-action' );
 $is_valid = $nonce->is_valid( $_POST['foo'] );
-```php
+```
