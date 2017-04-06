@@ -56,7 +56,7 @@ Create a nonce URL:
 
 ```php
 $nonce = new Dinamiko\Nonces\Nonce( 'my-action' );
-$field = $nonce->create_url( 'http://example.com' );
+$url = $nonce->create_url( 'http://example.com' );
 ```
 
 Verify a nonce:
