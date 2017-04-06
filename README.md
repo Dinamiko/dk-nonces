@@ -8,6 +8,7 @@ Plugin for testing dinamiko/nonces package.
 
 * [Installation](#installation)
 * [Usage](#usage)
+* [Utils](#utils)
 
 ## Installation
 
@@ -42,13 +43,26 @@ $ vendor/bin/phpunit
 Create a nonce:
 
 ```php
-use Dinamiko\Nonces\Nonce;
-$nonce = new Nonce( 'my-action' );
+$nonce = new Dinamiko\Nonces\Nonce( 'my-action' );
+```
+
+Create a nonce field:
+
+```php
+$nonce = new Dinamiko\Nonces\Nonce( 'my-action' );
+$field = $nonce->create_field();
+```
+
+Create a nonce URL:
+
+```php
+$nonce = new Dinamiko\Nonces\Nonce( 'my-action' );
+$field = $nonce->create_url( 'http://example.com' );
 ```
 
 Verify a nonce:
 
 ```php
-$nonce = new Nonce( 'my-action' );
+$nonce = new Dinamiko\Nonces\Nonce( 'my-action' );
 $is_valid = $nonce->is_valid( $_POST['foo'] );
 ```

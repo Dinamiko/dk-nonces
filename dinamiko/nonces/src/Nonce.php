@@ -4,20 +4,17 @@ namespace Dinamiko\Nonces;
 final class Nonce implements NonceInterface {
 
   /**
-   * [__construct description]
-   * @param string $action [description]
+   * @var string $action
    */
   private $action;
 
   /**
-   * [__construct description]
-   * @param string $action [description]
+   * @var array $allowed_request_methods
    */
   private $allowed_request_methods = [ 'POST', 'GET' ];
 
   /**
-   * [__construct description]
-   * @param string $action [description]
+   * @param string $action
    */
   public function __construct( string $action ) {
     $this->action = $action;
@@ -32,8 +29,8 @@ final class Nonce implements NonceInterface {
 	}
 
   /**
-   * [__toString description]
-   * @return string [description]
+   * Returns nonce value as string
+   * @return string
    */
   public function __toString(): string {
 		return (string) wp_create_nonce( $this->action );
@@ -55,6 +52,32 @@ final class Nonce implements NonceInterface {
     $nonce = filter_var( $request_value );
 
     return (bool) wp_verify_nonce( $nonce, $this->action );
+
+  }
+
+  /**
+   * [create_field description]
+   * @return [type] [description]
+   */
+  public function create_field() {
+
+    return sprintf(
+        '<input type="hidden" id="%s" name="%s" value="%s" />',
+        esc_attr( $this->action ),
+        esc_attr( $this->action ),
+        esc_attr( (string) wp_create_nonce( $this->action ) )
+    );
+
+  }
+
+  /**
+   * [create_url description]
+   * @param  string $url [description]
+   * @return [type]      [description]
+   */
+  public function create_url( string $url ) {
+
+    return esc_url_raw( add_query_arg( $this->action, (string) wp_create_nonce( $this->action ), $url ) );
 
   }
 
