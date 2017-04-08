@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Plugin for testing [Dinamiko Nonces Package]https://github.com/Dinamiko/Nonces
+Plugin for testing [Dinamiko Nonces Package](https://github.com/Dinamiko/Nonces)
 
 ## Table of Contents
 
