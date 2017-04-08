@@ -7,13 +7,7 @@
             "email": "emili.castells@dinamiko.com"
         }
     ],
-    "repositories": [
-        {
-            "type": "path",
-            "url": "dinamiko/nonces"
-        }
-    ],
     "require": {
-        "dinamiko/nonces": "@dev"
+        "dinamiko/nonces": "^1.0"
     }
 }

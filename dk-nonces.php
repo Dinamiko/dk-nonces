@@ -9,8 +9,6 @@
  * Tested up to: 4.7.3
  */
 
-use Dinamiko\Nonces\Nonce;
-
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 require 'vendor/autoload.php';

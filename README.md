@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Dinamiko Nonces allows working with WordPress Nonces in an easy way.
+Plugin for testing [Dinamiko Nonces Package]https://github.com/Dinamiko/Nonces
 
 ## Table of Contents
 
@@ -18,23 +18,10 @@ $ git clone https://github.com/Dinamiko/dk-nonces.git
 $ cd dk-nonces
 ```
 
-Install plugin dependencies with [Composer](https://getcomposer.org):
+Install Dinamiko Nonces Package with [Composer](https://getcomposer.org):
 
 ```sh
-$ composer install
-```
-
-Install dinamiko/nonces package dependencies:
-
-```sh
-$ cd dinamiko/nonces
-$ composer install
-```
-
-Run the tests:
-
-```sh
-$ vendor/bin/phpunit
+$ composer require dinamiko/nonces
 ```
 
 ## Usage
