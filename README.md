@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Plugin for testing dinamiko/nonces package.
+Dinamiko Nonces allows working with WordPress Nonces in an easy way.
 
 ## Table of Contents
 

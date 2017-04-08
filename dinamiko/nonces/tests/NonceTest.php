@@ -15,9 +15,6 @@ class NonceTest extends \PHPUnit\Framework\TestCase {
     parent::tearDown();
   }
 
-  /**
-   * [test_to_string description]
-   */
   public function test_to_string() {
     Functions::when( 'wp_create_nonce' )->justReturn( '62a9e9c072' );
 
@@ -25,9 +22,6 @@ class NonceTest extends \PHPUnit\Framework\TestCase {
     $this->assertEquals( '62a9e9c072', (string) $nonce );
   }
 
-  /**
-   * [test_is_valid description]
-   */
   public function test_is_valid() {
     Functions::expect( 'wp_verify_nonce' )->with( 'bar', 'my-action' )->andReturn( true );
 
@@ -39,9 +33,6 @@ class NonceTest extends \PHPUnit\Framework\TestCase {
     self::assertTrue( $nonce->is_valid( $_POST['foo'] ) );
   }
 
-  /**
-   * [test_create_field description]
-   */
   public function test_create_field() {
     Functions::when( 'wp_create_nonce' )->justReturn( '62a9e9c072' );
     Functions::when( 'esc_attr' )->alias(function ( $string ) {
@@ -55,9 +46,6 @@ class NonceTest extends \PHPUnit\Framework\TestCase {
     $this->assertEquals( $expected, $field );
   }
 
-  /**
-   * [test_create_url description]
-   */
   public function test_create_url() {
     Functions::when( 'wp_create_nonce' )->justReturn( '62a9e9c072' );
     Functions::when( 'esc_url_raw' )->alias(function ( $url ) {

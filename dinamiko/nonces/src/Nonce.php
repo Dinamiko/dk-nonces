@@ -21,15 +21,13 @@ final class Nonce implements NonceInterface {
   }
 
   /**
-   * [action description]
-   * @return string [description]
+   * @return string
    */
   public function action(): string {
 		return $this->action;
 	}
 
   /**
-   * Returns nonce value as string
    * @return string
    */
   public function __toString(): string {
@@ -37,9 +35,9 @@ final class Nonce implements NonceInterface {
 	}
 
   /**
-   * [is_valid description]
-   * @param  [type] $request_value [description]
-   * @return bool                  [description]
+   * Checks if server request method is valid and verifies the nonce using wp_verify_nonce
+   * @param  string $request_value
+   * @return bool
    */
   public function is_valid( $request_value ): bool {
 
@@ -56,8 +54,8 @@ final class Nonce implements NonceInterface {
   }
 
   /**
-   * [create_field description]
-   * @return [type] [description]
+   * Returns an input hidden field with action name and nonce value
+   * @return string
    */
   public function create_field() {
 
@@ -71,9 +69,9 @@ final class Nonce implements NonceInterface {
   }
 
   /**
-   * [create_url description]
-   * @param  string $url [description]
-   * @return [type]      [description]
+   * Adds action name and nonce value to the given URL
+   * @param  string $url
+   * @return string
    */
   public function create_url( string $url ) {
 
